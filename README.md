@@ -8,11 +8,11 @@ An expression library is included to store and manage commonly-used XPath expres
 
 ![XML Explorer.png](https://raw.githubusercontent.com/Spetnik/XMLExplorer/master/XML%20Explorer.png)
 
-XML Explorer does not currently have any edit capabilities. If you need to edit XML files, I highly recommend the excellent XML Notepad.
+XML Explorer does not currently have any edit capabilities. If you need to edit XML files, I highly recommend the excellent [XML Notepad](http://www.codeplex.com/xmlnotepad).
 
-For more information and a walk-through of the code, see the Code Project article at http://www.codeproject.com/Articles/19555/XML-Explorer.
+For more information and a walk-through of the code, see the Code Project article at (http://www.codeproject.com/Articles/19555/XML-Explorer).
 
-XML Explorer uses DockPanel Suite, a docking library for .NET Windows Forms development which mimics Visual Studio .NET. Many thanks to the contributors of the project!
+XML Explorer uses [DockPanel Suite](http://sourceforge.net/projects/dockpanelsuite), a docking library for .NET Windows Forms development which mimics Visual Studio .NET. Many thanks to the contributors of the project!
 
 ## Performance
 
@@ -40,4 +40,4 @@ XML Explorer also makes much more efficient use of RAM, by utilizing XPathDocume
 | 281 KB | 12.87 MB RAM | 6.85 MB RAM |
 
 -Jason Coon
-Last edited Jan 22, 2015 at 8:15 AM by jcoon, version 19
+Last edited Jan 22, 2015 at 8:15 AM by [jcoon](https://www.codeplex.com/site/users/view/jcoon), version 19
