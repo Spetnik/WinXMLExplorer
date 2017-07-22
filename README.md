@@ -1,4 +1,7 @@
 # XML Explorer
+## Download
+You can download the latest release [here](https://github.com/Spetnik/XMLExplorer/releases/download/4.0.5.0/XmlExplorer.Setup.msi).
+
 ## Project Description
 XML Explorer is an extremely fast, lightweight XML file viewer. It can handle extremely large XML files. It has been tested on files as big as 300MB. It allows fast viewing and exploration, copying of formatted XML data, evaluation of XPath expressions, and XSD schema validation.
 
