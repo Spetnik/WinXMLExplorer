@@ -1,15 +1,16 @@
-# XML Explorer
+# WinXML Explorer
+#### Based on [jcoon's XML Explorer](https://xmlexplorer.codeplex.com/)
 ## Download
-You can download the latest release [here](https://github.com/Spetnik/XMLExplorer/releases/download/4.0.5.0/XmlExplorer.Setup.msi).
+You can download the latest release [here](https://github.com/Spetnik/WinXMLExplorer/releases/download/4.0.5.0/XmlExplorer.Setup.msi).
 
 ## Project Description
-XML Explorer is an extremely fast, lightweight XML file viewer. It can handle extremely large XML files. It has been tested on files as big as 300MB. It allows fast viewing and exploration, copying of formatted XML data, evaluation of XPath expressions, and XSD schema validation.
+WinXML Explorer is an extremely fast, lightweight XML file viewer. It can handle extremely large XML files. It has been tested on files as big as 300MB. It allows fast viewing and exploration, copying of formatted XML data, evaluation of XPath expressions, and XSD schema validation.
 
 It validates XML documents using XSD Schema (specified in the document), shows a list of validation errors, and double-clicking an error navigates and selects the node.
 
 An expression library is included to store and manage commonly-used XPath expressions, much like Bookmarks in FireFox. It supports multiple document tabs, with support for middle-clicking to close tabs, and fully-featured, Visual Studio-style dockable panes.
 
-![XML Explorer.png](https://raw.githubusercontent.com/Spetnik/XMLExplorer/master/XML%20Explorer.png)
+![XML Explorer.png](https://raw.githubusercontent.com/Spetnik/WinXMLExplorer/master/XML%20Explorer.png)
 
 XML Explorer does not currently have any edit capabilities. If you need to edit XML files, I highly recommend the excellent [XML Notepad](http://www.codeplex.com/xmlnotepad).
 
