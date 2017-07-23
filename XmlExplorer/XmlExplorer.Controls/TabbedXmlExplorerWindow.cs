@@ -1220,6 +1220,7 @@ namespace XmlExplorer.Controls
 			Thread thread = new Thread(delegate()
 			{
 				WebClient webClient = new WebClient();
+				webClient.Headers["User-Agent"] = "WinXML Explorer"; //To avoid "The server committed a protocol violation. Section=ResponseStatusLine" Error
 				webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
 				webClient.DownloadDataCompleted += this.OnCheckForUpdateCompleted;
 				webClient.DownloadDataAsync(new Uri(this.AutoUpdateUrl), userRequested);
@@ -1777,7 +1778,7 @@ namespace XmlExplorer.Controls
 
 				Version currentVersion = AboutBox.AssemblyVersion;
 
-				ReleaseInfoCollection releases = ReleaseInfoCollection.FromRss(e.Result);
+				ReleaseInfoCollection releases = ReleaseInfoCollection.FromJSON(e.Result);
 
 				if (releases == null)
 				{
