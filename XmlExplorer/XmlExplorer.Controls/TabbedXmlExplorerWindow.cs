@@ -2583,5 +2583,10 @@ namespace XmlExplorer.Controls
 		}
 
 		#endregion
+
+		private void toolStripMenuItemLicense_Click(object sender, EventArgs e)
+		{
+			Process.Start("https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC1");
+		}
 	}
 }

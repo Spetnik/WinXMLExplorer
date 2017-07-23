@@ -55,7 +55,7 @@
 			this.lblLicense.Name = "lblLicense";
 			this.lblLicense.Size = new System.Drawing.Size(471, 70);
 			this.lblLicense.TabIndex = 1;
-			this.lblLicense.Text = "label1";
+			this.lblLicense.Text = "License";
 			// 
 			// lblTitle
 			// 
