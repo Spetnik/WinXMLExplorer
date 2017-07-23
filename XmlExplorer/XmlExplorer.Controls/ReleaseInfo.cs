@@ -38,7 +38,55 @@ namespace XmlExplorer.Controls
             }
         }
 
-        public static ReleaseInfoCollection FromRss(MemoryStream stream)
+		public static ReleaseInfoCollection FromJSON(MemoryStream stream)
+		{
+			ReleaseInfoCollection releases = new ReleaseInfoCollection();
+
+			// regex to match a valid release version
+			Regex regex = new Regex(@"\d+.\d+.\d+");
+
+			XDocument document = XDocument.Load(stream);
+			
+			foreach (var item in document.Element("rss").Element("channel").Descendants("item"))
+			{
+				string title = item.Element("title").Value;
+				Match match = regex.Match(title);
+				if (!match.Success)
+					continue;
+
+				string titleLower = title.ToLower();
+
+				if (titleLower.Contains("deleted") || titleLower.Contains("removed"))
+					continue;
+
+				ReleaseStatus status = ReleaseStatus.Stable;
+
+				if (titleLower.Contains("alpha"))
+					status = ReleaseStatus.Alpha;
+				else if (titleLower.Contains("beta"))
+					status = ReleaseStatus.Beta;
+
+				Version version = new Version(match.Groups[0].Value);
+
+				if (releases.Exists(r => r.Version == version))
+					continue;
+
+				string link = item.Element("link").Value;
+
+				ReleaseInfo release = new ReleaseInfo()
+				{
+					Status = status,
+					Url = link,
+					Version = version,
+				};
+
+				releases.Add(release);
+			}
+
+			return releases;
+		}
+
+		public static ReleaseInfoCollection FromRss(MemoryStream stream)
         {
             ReleaseInfoCollection releases = new ReleaseInfoCollection();
 
