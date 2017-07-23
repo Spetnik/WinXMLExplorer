@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XmlExplorer</RootNamespace>
-    <AssemblyName>XmlExplorer</AssemblyName>
+    <AssemblyName>WinXmlExplorer</AssemblyName>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>D956BAFECF452F6F501D6374D9FA28AFCDCA7015</ManifestCertificateThumbprint>
     <ManifestKeyFile>XmlExplorer_TemporaryKey.pfx</ManifestKeyFile>
