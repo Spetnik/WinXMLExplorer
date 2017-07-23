@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("XmlExplorer.Controls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("XmlExplorer.Controls")]
-[assembly: AssemblyCompany("XML Explorer")]
-[assembly: AssemblyProduct("XML Explorer")]
-[assembly: AssemblyCopyright("Copyright © Jason Coon 2007-2010")]
+[assembly: AssemblyCompany("WinXML Explorer")]
+[assembly: AssemblyProduct("WinXML Explorer")]
+[assembly: AssemblyCopyright("Copyright © Aaron J Spetner 2017;\r\nPortions © Jason Coon 2007-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

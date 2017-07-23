@@ -263,7 +263,7 @@ namespace XmlExplorer
 
 							if (result == DialogResult.Yes)
 							{
-								System.Windows.DefaultApplications.ShowAssociationsWindow("XML Explorer");
+								System.Windows.DefaultApplications.ShowAssociationsWindow("WinXML Explorer");
 							}
 						}
 					}

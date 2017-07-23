@@ -1256,12 +1256,12 @@ namespace XmlExplorer.Controls
 			this.UpdateNamespaceList();
 
 			string loadedTime = null;
-			string windowText = "XML Explorer";
+			string windowText = "WinXML Explorer";
 			XPathNavigatorTreeView treeView = null;
 			bool isLoading = false;
 
 			if (this.ActiveMdiChild != null)
-				windowText = string.Format("XML Explorer - [{0}]", this.ActiveMdiChild.Text);
+				windowText = string.Format("WinXML Explorer - [{0}]", this.ActiveMdiChild.Text);
 
 			// get the selected window
 			XmlExplorerWindow window = this.ActiveMdiChild as XmlExplorerWindow;
@@ -2574,7 +2574,7 @@ namespace XmlExplorer.Controls
 			try
 			{
 				if (System.Windows.DefaultApplications.IsAssociationsWindowSupported)
-					System.Windows.DefaultApplications.ShowAssociationsWindow("XML Explorer");
+					System.Windows.DefaultApplications.ShowAssociationsWindow("WinXML Explorer");
 			}
 			catch (Exception ex)
 			{

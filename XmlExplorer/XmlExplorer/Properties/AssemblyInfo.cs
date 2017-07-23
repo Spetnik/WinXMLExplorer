@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WinXML Explorer")]
-[assembly: AssemblyCopyright("Copyright © Aaron J Spetner 2017; Portions © Jason Coon 2007-2011")]
+[assembly: AssemblyCopyright("Copyright © Aaron J Spetner 2017;\r\nPortions © Jason Coon 2007-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
