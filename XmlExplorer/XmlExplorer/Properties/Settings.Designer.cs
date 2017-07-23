@@ -143,8 +143,7 @@ namespace XmlExplorer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.codeplex.com/xmlexplorer/Project/ProjectRss.aspx?ProjectRSSFeed=codepl" +
-            "ex://release/xmlexplorer")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.github.com/repos/Spetnik/WinXMLExplorer/releases")]
         public string UpdateUrl {
             get {
                 return ((string)(this["UpdateUrl"]));

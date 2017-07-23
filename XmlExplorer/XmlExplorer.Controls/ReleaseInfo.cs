@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.Json;
 
 namespace XmlExplorer.Controls
 {
@@ -30,62 +31,64 @@ namespace XmlExplorer.Controls
         {
         }
 
-        public static ReleaseInfoCollection FromRss(byte[] bytes)
-        {
-            using (MemoryStream stream = new MemoryStream(bytes))
-            {
-                return FromRss(stream);
-            }
-        }
+		public static ReleaseInfoCollection FromJSON(byte[] bytes)
+		{
+			using (MemoryStream stream = new MemoryStream(bytes))
+			{
+				return FromJSON(stream);
+			}
+		}
 
-        public static ReleaseInfoCollection FromRss(MemoryStream stream)
-        {
-            ReleaseInfoCollection releases = new ReleaseInfoCollection();
+		public static ReleaseInfoCollection FromJSON(MemoryStream stream)
+		{
+			ReleaseInfoCollection releases = new ReleaseInfoCollection();
 
-            // regex to match a valid release version
-            Regex regex = new Regex(@"\d+.\d+.\d+");
+			// regex to match a valid release version
+			Regex regex = new Regex(@"\d+.\d+.\d+.\d+");
 
-            XDocument document = XDocument.Load(stream);
+			StreamReader reader = new StreamReader(stream);
 
-            foreach (var item in document.Element("rss").Element("channel").Descendants("item"))
-            {
-                string title = item.Element("title").Value;
-                Match match = regex.Match(title);
-                if (!match.Success)
-                    continue;
+			JsonArray jArray = JsonValue.Load(stream) as JsonArray;
+			foreach(JsonValue jValue in jArray)
+			{
+				string title = jValue["name"];
+				Match match = regex.Match(title);
+				if (!match.Success)
+					continue;
 
-                string titleLower = title.ToLower();
+				ReleaseStatus status = ReleaseStatus.Stable;
+				if (jValue["draft"])
+				{
+					status = ReleaseStatus.Beta;
+				}
 
-                if (titleLower.Contains("deleted") || titleLower.Contains("removed"))
-                    continue;
+				Version version = new Version(match.Groups[0].Value);
+				if (releases.Exists(r => r.Version == version))
+					continue;
 
-                ReleaseStatus status = ReleaseStatus.Stable;
+				string link = "";
+				if (jValue["assets"].Count > 0)
+				{
+					link = jValue["assets"][0]["browser_download_url"];
+				}
+				else
+				{
+					continue;
+				}
 
-                if (titleLower.Contains("alpha"))
-                    status = ReleaseStatus.Alpha;
-                else if (titleLower.Contains("beta"))
-                    status = ReleaseStatus.Beta;
+				ReleaseInfo release = new ReleaseInfo()
+				{
+					Status = status,
+					Url = link,
+					Version = version,
+				};
 
-                Version version = new Version(match.Groups[0].Value);
+				releases.Add(release);
+			}
 
-                if (releases.Exists(r => r.Version == version))
-                    continue;
-
-                string link = item.Element("link").Value;
-
-                ReleaseInfo release = new ReleaseInfo()
-                {
-                    Status = status,
-                    Url = link,
-                    Version = version,
-                };
-
-                releases.Add(release);
-            }
-
-            return releases;
-        }
-
+			return releases;
+		}
+		
         #region Replaced XPathNavigator code with LINQ to XML code :)
 
         //private static ReleaseInfoCollection FromRss(MemoryStream stream)

@@ -235,7 +235,7 @@
     <value>panel1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Would you like to choose which file types XML Explorer opens by default?</value>
+    <value>Would you like to choose which file types WinXML Explorer opens by default?</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -256,7 +256,7 @@
     <value>&amp;No</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>XML Explorer</value>
+    <value>WinXML Explorer</value>
   </data>
   <data name="buttonYes.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 12</value>

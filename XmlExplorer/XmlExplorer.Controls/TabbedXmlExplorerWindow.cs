@@ -1220,6 +1220,7 @@ namespace XmlExplorer.Controls
 			Thread thread = new Thread(delegate()
 			{
 				WebClient webClient = new WebClient();
+				webClient.Headers["User-Agent"] = "WinXML Explorer"; //To avoid "The server committed a protocol violation. Section=ResponseStatusLine" Error
 				webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
 				webClient.DownloadDataCompleted += this.OnCheckForUpdateCompleted;
 				webClient.DownloadDataAsync(new Uri(this.AutoUpdateUrl), userRequested);
@@ -1255,12 +1256,12 @@ namespace XmlExplorer.Controls
 			this.UpdateNamespaceList();
 
 			string loadedTime = null;
-			string windowText = "XML Explorer";
+			string windowText = "WinXML Explorer";
 			XPathNavigatorTreeView treeView = null;
 			bool isLoading = false;
 
 			if (this.ActiveMdiChild != null)
-				windowText = string.Format("XML Explorer - [{0}]", this.ActiveMdiChild.Text);
+				windowText = string.Format("WinXML Explorer - [{0}]", this.ActiveMdiChild.Text);
 
 			// get the selected window
 			XmlExplorerWindow window = this.ActiveMdiChild as XmlExplorerWindow;
@@ -1777,7 +1778,7 @@ namespace XmlExplorer.Controls
 
 				Version currentVersion = AboutBox.AssemblyVersion;
 
-				ReleaseInfoCollection releases = ReleaseInfoCollection.FromRss(e.Result);
+				ReleaseInfoCollection releases = ReleaseInfoCollection.FromJSON(e.Result);
 
 				if (releases == null)
 				{
@@ -2573,7 +2574,7 @@ namespace XmlExplorer.Controls
 			try
 			{
 				if (System.Windows.DefaultApplications.IsAssociationsWindowSupported)
-					System.Windows.DefaultApplications.ShowAssociationsWindow("XML Explorer");
+					System.Windows.DefaultApplications.ShowAssociationsWindow("WinXML Explorer");
 			}
 			catch (Exception ex)
 			{
@@ -2582,5 +2583,10 @@ namespace XmlExplorer.Controls
 		}
 
 		#endregion
+
+		private void toolStripMenuItemLicense_Click(object sender, EventArgs e)
+		{
+			Process.Start("https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC1");
+		}
 	}
 }

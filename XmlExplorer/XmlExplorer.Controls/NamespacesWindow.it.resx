@@ -177,7 +177,7 @@
 </value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Italian: XML Explorer has detected the following namespaces.  In order to be able to execute XPath statements against elements in these namespaces, XML Explorer needs a prefix for each namespace.  Please note the prefix for each namespace.
+    <value>Italian: WinXML Explorer has detected the following namespaces.  In order to be able to execute XPath statements against elements in these namespaces, XML Explorer needs a prefix for each namespace.  Please note the prefix for each namespace.
 
 You will need to use these prefixes in any XPath statements.</value>
   </data>

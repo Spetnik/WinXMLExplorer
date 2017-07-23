@@ -28,7 +28,7 @@ namespace XmlExplorer
 		private SingleInstanceApplication()
 		{
 			base.IsSingleInstance = true;
-			base.MinimumSplashScreenDisplayTime = 0;
+			base.MinimumSplashScreenDisplayTime = 5000;
 		}
 
 		public static SingleInstanceApplication Instance

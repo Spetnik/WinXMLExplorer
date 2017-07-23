@@ -372,7 +372,7 @@
     <value>214, 22</value>
   </data>
   <data name="toolStripMenuItemAbout.Text" xml:space="preserve">
-    <value>&amp;About XML Explorer Italian</value>
+    <value>&amp;About WinXML Explorer Italian</value>
   </data>
   <data name="toolStripMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 20</value>
